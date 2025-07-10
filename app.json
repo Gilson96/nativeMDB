@@ -24,17 +24,7 @@
       "output": "static",
       "favicon": ""
     },
-    "plugins": [
-      "expo-router",
-      [
-        {
-          "image": "",
-          "imageWidth": 200,
-          "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
-        }
-      ]
-    ],
+   
     "experiments": {
       "typedRoutes": true
     },
