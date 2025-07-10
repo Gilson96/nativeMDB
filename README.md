@@ -1,61 +1,69 @@
-# 🎬 nativeMDB – A Modern React Native Movie Discovery App
+# 🎬 NativeMDB – A Mobile Movie Discovery App
 
-**nativeMDB** is a sleek, high-performance mobile app built with **React Native**, **Expo**, and **TypeScript**, allowing users to discover, filter, and favourite movies and TV shows using **The Movie Database (TMDB)** API.
-
-> 💼 Designed to showcase mobile development skills with real-world features, clean UX, and performant architecture — ideal for UK-based employers looking for React Native talent.
-
-![nativeMDB demo](https://github.com/Gilson96/nativeMDB/assets/preview.gif) <!-- Replace with actual GIF or screenshot link -->
+NativeMDB is a **React Native** mobile application built using **Expo**, designed to provide an immersive experience for discovering movies and TV shows. Powered by **TMDB API**, it allows users to browse, filter, and manage their personal watchlists or favourites.
 
 ---
 
 ## ✨ Features
 
-- 🔎 **Search, Filter & Discover**:
-  - Search movies and TV shows by genre, popularity, or rating
-  - Dynamic sorting (e.g. most popular, highest rated)
-
-- ❤️ **User Accounts**:
-  - Firebase Authentication integration
-  - Secure login/signup functionality
-  - Persistent user state with Redux
-
-- 📝 **My List (Watchlist & Favorites)**:
-  - Save movies to watch later or mark as favorites
-  - Real-time toast notifications on add/remove
-
-- 🎭 **Dynamic Navigation**:
-  - Built with `expo-router` for modern native routing
-  - Fully responsive UI, optimized for Android and iOS
-
-- 🎨 **Modern UI Components**:
-  - Custom dropdowns, modals, and menus using `shadcn/ui`
-  - Avatar components, cards, icons, and toast notifications
+- 🔎 **Search & Filter**: Browse content by genre, popularity, and release date.
+- 🎞️ **Detail Screens**: View in-depth movie and TV show information.
+- ❤️ **Watchlist & Favorites**: Add or remove titles with persistent user storage.
+- 🔄 **Pull-to-Refresh**: Instantly update lists or data with swipe-down gesture.
+- 🌐 **API Integration**: Dynamic data from TMDB with real-time fetching.
+- 🧭 **Expo Router Navigation**: Nested navigation with stack and tabs.
+- 🔐 **Firebase Authentication**: Secure login and user-specific data handling.
 
 ---
 
-## 🛠️ Tech Stack
+## 📱 Screenshots
 
-| Area                | Tools/Frameworks                                        |
-|---------------------|---------------------------------------------------------|
-| Mobile Framework    | [React Native](https://reactnative.dev/), [Expo](https://expo.dev/) |
-| Language            | TypeScript                                              |
-| Backend/API         | [TMDB API](https://www.themoviedb.org/documentation/api), Firebase Auth |
-| State Management    | Redux Toolkit                                           |
-| Routing             | Expo Router                                             |
-| UI & Styling        | Tailwind (via `nativewind`), Shadcn UI                  |
-| Forms & Validation  | Custom components with reusable logic                   |
+### 🏠 Home Screen
+![Home](screens/home.png)
+
+### 🎬 Movie Detail
+![Details](screens/details.png)
+
+### 🔍 Filtered Results
+![Filtered](screens/filters.png)
+
+### ❤️ My List
+![My List](screens/list.png)
 
 ---
 
-## 📦 Installation & Setup
+## 🧑‍💻 Tech Stack
+
+| Category           | Tech                                                    |
+|--------------------|----------------------------------------------------------|
+| Framework          | [React Native](https://reactnative.dev/) via [Expo](https://expo.dev/) |
+| Routing            | [Expo Router](https://expo.github.io/router/docs)       |
+| State Management   | [Redux Toolkit](https://redux-toolkit.js.org/)          |
+| Backend Services   | [Firebase Auth](https://firebase.google.com/)           |
+| API Source         | [TMDB API](https://www.themoviedb.org/documentation/api)|
+| Styling            | Tailwind CSS (via `nativewind`)                         |
+| Type Safety        | TypeScript                                               |
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js
+- Expo CLI
+- Android Studio / Xcode (for simulators)
+- Firebase project + TMDB API key
+
+### Installation
 
 ```bash
-# 1. Clone the repo
+# Clone the repo
 git clone https://github.com/Gilson96/nativeMDB.git
 cd nativeMDB
 
-# 2. Install dependencies
+# Install dependencies
 npm install
 
-# 3. Start the Expo server
+# Start Expo project
 npx expo start
