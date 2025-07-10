@@ -18,17 +18,20 @@ NativeMDB is a **React Native** mobile application built using **Expo**, designe
 
 ## 📱 Screenshots
 
+### 🔐 Login Screen
+![Home](https://github.com/Gilson96/nativeMDB/blob/master/assets/screenshots/login_screen.png?raw=true)
+
 ### 🏠 Home Screen
-![Home](screens/home.png)
+![Home](https://github.com/Gilson96/nativeMDB/blob/master/assets/screenshots/home.png?raw=true)
 
 ### 🎬 Movie Detail
-![Details](screens/details.png)
+![Details](https://github.com/Gilson96/nativeMDB/blob/master/assets/screenshots/movie.png?raw=true)
 
 ### 🔍 Filtered Results
-![Filtered](screens/filters.png)
+![Filtered](https://github.com/Gilson96/nativeMDB/blob/master/assets/screenshots/filtered.png?raw=true)
 
 ### ❤️ My List
-![My List](screens/list.png)
+![My List](https://github.com/Gilson96/nativeMDB/blob/master/assets/screenshots/myList.png?raw=true)
 
 ---
 
