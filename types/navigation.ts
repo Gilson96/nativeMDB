@@ -1,6 +1,6 @@
 export type RootStackParamList = {
   home: undefined;
-  login: undefined;
+  index: undefined;
   movie: { id: number; type: string };
   people: { id: number };
   profile: undefined;
