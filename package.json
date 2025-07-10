@@ -35,6 +35,7 @@
     "@tailwindcss/line-clamp": "^0.4.4",
     "ajv": "^8.17.1",
     "autoprefixer": "^10.4.21",
+    "eas-cli": "^16.15.0",
     "expo": "~53.0.12",
     "expo-blur": "~14.1.5",
     "expo-constants": "~17.1.6",

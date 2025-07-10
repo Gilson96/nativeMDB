@@ -40,6 +40,7 @@ const Filtered = () => {
       setShouldFetch(false);
     }
   }, [shouldFetch]);
+
   const options: Intl.DateTimeFormatOptions = {
     day: "2-digit",
     month: "short",
@@ -56,7 +57,6 @@ const Filtered = () => {
       type,
     });
   };
-  console.log(filters);
   return (
     <>
       <Stack.Screen options={{ header: () => <Header /> }} />
@@ -87,7 +87,7 @@ const Filtered = () => {
             <TouchableOpacity
               key={movie.id}
               onPress={() => goToMovie({ movieId: movie.id, type: mediaType })}
-              className="w-full overflow-hidden h-[30rem] flex-row justify-start items-center border border-neutral-300 rounded"
+              className="w-full overflow-hidden h-[10rem] flex-row justify-start items-center border border-neutral-300 rounded"
             >
               <Image
                 source={{

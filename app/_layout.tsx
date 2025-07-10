@@ -10,7 +10,7 @@ export default function RootLayout() {
     <Provider store={store}>
       <GluestackUIProvider>
         <ToastProvider>
-          <Stack initialRouteName="home" />
+          <Stack initialRouteName="login" />
         </ToastProvider>
       </GluestackUIProvider>
     </Provider>

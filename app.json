@@ -16,7 +16,8 @@
         "foregroundImage": "",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.gilson96.nativeMDB"
     },
     "web": {
       "bundler": "metro",
@@ -37,6 +38,12 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "20d31e4f-3644-4504-9f16-898ded222fe5"
+      }
     }
   }
 }
