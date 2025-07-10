@@ -17,6 +17,7 @@ const accountApi = firebaseApi.injectEndpoints({
           const fields = doc.fields || {};
           return {
             id: fields.movieId?.integerValue || null,
+            media_type: fields.mediaType?.stringValue || null,
           };
         });
       },
@@ -27,6 +28,7 @@ const accountApi = firebaseApi.injectEndpoints({
         userId,
         movieId,
         list,
+        type
       }: {
         userId: string | undefined;
         movieId: number;
@@ -38,6 +40,7 @@ const accountApi = firebaseApi.injectEndpoints({
         body: {
           fields: {
             movieId: { integerValue: movieId },
+            mediaType: {stringValue: type}
           },
         },
       }),

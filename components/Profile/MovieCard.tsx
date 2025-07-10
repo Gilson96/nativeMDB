@@ -1,6 +1,9 @@
 import { useGetMoviesDetailsQuery } from "@/lib/moviesEndpoints";
+import { RootStackParamList } from "@/types/navigation";
+import { useNavigation } from "@react-navigation/native";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import React from "react";
-import { Image, Text, View } from "react-native";
+import { Image, Text, TouchableOpacity, View } from "react-native";
 import DeleteMovie from "./DeleteMovie";
 
 type MovieCardProps = {
@@ -16,6 +19,9 @@ const MovieCard = ({
   selectedValue,
   setIsDeleted,
 }: MovieCardProps) => {
+  const navigation =
+    useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+
   const {
     data: movieDetails,
     isLoading,
@@ -37,9 +43,15 @@ const MovieCard = ({
     year: "numeric",
   };
   const formattedDate = stringToDate.toLocaleDateString("en-GB", options);
+  const goToMovie = () => {
+    navigation.navigate("movie", {
+      id: movieId,
+      type: mediaType,
+    });
+  };
 
   return (
-    <View className="">
+    <TouchableOpacity onPress={goToMovie} className="">
       <View className="w-full h-[10rem] border border-neutral-200 flex-row justify-start items-center">
         <Image
           source={{
@@ -73,7 +85,7 @@ const MovieCard = ({
           </Text>
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

@@ -11,8 +11,8 @@ import {
 import { useGetMyListQuery } from "@/lib/accountEndpoints";
 import { RootState } from "@/store";
 import { Stack } from "expo-router";
-import React, { useEffect, useState } from "react";
-import { ScrollView, Text, View } from "react-native";
+import React, { useCallback, useEffect, useState } from "react";
+import { RefreshControl, ScrollView, Text, View } from "react-native";
 import { useSelector } from "react-redux";
 
 const Profile = () => {
@@ -32,10 +32,9 @@ const Profile = () => {
     userId: userId!,
     list: selectedValue,
   });
-  const showToast = (
-    action: "remove",
-    list: "favorites" | "watchlist"
-  ) => {
+  const [refreshing, setRefreshing] = useState(false);
+
+  const showToast = (action: "remove", list: "favorites" | "watchlist") => {
     const id = Math.random().toString();
 
     toast.show({
@@ -60,15 +59,32 @@ const Profile = () => {
 
   useEffect(() => {
     if (isDeleted) {
-      showToast();
+      showToast("remove", selectedValue as "favorites" | "watchlist");
       setIsDeleted(false);
     }
   }, [isDeleted]);
 
+  const onRefresh = useCallback(async () => {
+    setRefreshing(true);
+    try {
+      await refetch().unwrap(); // actually fetch new data
+    } catch (err) {
+      console.error("Refresh failed:", err);
+    } finally {
+      setRefreshing(false);
+    }
+  }, [refetch]);
+
+  console.log(movieList)
   return (
     <>
       <Stack.Screen options={{ header: () => <Header /> }} />
-      <ScrollView contentContainerStyle={{ paddingBottom: 40 }}>
+      <ScrollView
+     contentContainerStyle={{ paddingBottom: 40 }}
+  refreshControl={
+    <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+  }
+      >
         {isDeleted &&
           toast.show({
             title: "Success!",
@@ -98,8 +114,9 @@ const Profile = () => {
           <View className="py-[3%] flex-col gap-3">
             {movieList?.map((movie) => (
               <MovieCard
+                key={movie.id}
                 selectedValue={selectedValue}
-                mediaType={mediaType}
+                mediaType={movie.media_type}
                 movieId={Number(movie.id)}
                 setIsDeleted={setIsDeleted}
               />

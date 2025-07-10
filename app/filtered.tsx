@@ -20,8 +20,6 @@ const Filtered = () => {
     sortBy: "popularity.desc",
   });
 
-  const [shouldFetch, setShouldFetch] = useState(false);
-
   const route = useRoute<RouteProp<RootStackParamList, "filtered">>();
   const { mediaType } = route.params;
   const navigation =
@@ -31,15 +29,12 @@ const Filtered = () => {
   const { data: movieDetails, isLoading, isFetching } = result;
 
   useEffect(() => {
-    if (shouldFetch) {
-      trigger({
-        genresId: filters.genres,
-        sortBy: filters.sortBy,
-        type: mediaType,
-      });
-      setShouldFetch(false);
-    }
-  }, [shouldFetch]);
+    trigger({
+      genresId: filters.genres,
+      sortBy: filters.sortBy,
+      type: mediaType,
+    });
+  }, []);
 
   const options: Intl.DateTimeFormatOptions = {
     day: "2-digit",
@@ -60,7 +55,7 @@ const Filtered = () => {
   return (
     <>
       <Stack.Screen options={{ header: () => <Header /> }} />
-      <ScrollView>
+      <ScrollView contentContainerStyle={{paddingBottom: 40}}>
         <View className="py-[3%] px-[5%]">
           <Text className="py-[4%]  text-xl font-bold">
             {mediaType === "movie" ? "All Movies" : "All TV Shows"}
@@ -76,13 +71,20 @@ const Filtered = () => {
         </View>
         <View className="w-full flex-col justify-center items-center">
           <TouchableOpacity
-            onPress={() => setShouldFetch(true)}
+            onPress={() =>
+              trigger({
+                genresId: filters.genres,
+                sortBy: filters.sortBy,
+                type: mediaType,
+              })
+            }
             className="bg-orange-950 w-[90%] py-[4%] rounded-full flex-row justify-center items-center"
           >
             <Text className="text-white font-bold text-xl">Search</Text>
           </TouchableOpacity>
         </View>
         <View className="w-full flex-col justify-center items-center p-[4%] gap-3">
+     
           {movieDetails?.results.map((movie) => (
             <TouchableOpacity
               key={movie.id}

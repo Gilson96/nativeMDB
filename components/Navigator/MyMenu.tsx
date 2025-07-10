@@ -16,21 +16,21 @@ const MyMenu = () => {
       disabledKeys={["Settings"]}
       trigger={({ ...triggerProps }) => {
         return (
-          <Button
-            style={{ backgroundColor: "transparent" }}
-            {...triggerProps}
-          >
+          <Button style={{ backgroundColor: "transparent" }} {...triggerProps}>
             <FontAwesome name="bars" size={24} color="white" />
           </Button>
         );
       }}
-      style={{ width: 100 }}
+      style={{
+        width: 100,
+        overflow: "hidden", // ✅ Add this
+        borderRadius: 8, // Optional: Match your style
+      }}
     >
       <MenuItem
         onPress={() => navigation.navigate("filtered", { mediaType: "movie" })}
         key="movie"
         textValue="movie"
-        className="w-10"
       >
         <MenuItemLabel size="sm">Movies</MenuItemLabel>
       </MenuItem>

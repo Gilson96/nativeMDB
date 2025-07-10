@@ -25,6 +25,7 @@ const Details = ({ id, type }: { id: number; type: string }) => {
 
     return `${hoursStr}${minutesStr}`.trim();
   };
+  console.log(id)
 
   return (
     <>
