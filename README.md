@@ -19,19 +19,19 @@ NativeMDB is a **React Native** mobile application built using **Expo**, designe
 ## 📱 Screenshots
 
 ### 🔐 Login Screen
-![Home]<img src="https://github.com/Gilson96/nativeMDB/blob/master/assets/screenshots/login_screen.png?raw=true" width="250"/>
+<img src="https://github.com/Gilson96/nativeMDB/blob/master/assets/screenshots/login_screen.png?raw=true" width="250"/>
 
 ### 🏠 Home Screen
-![Home](https://github.com/Gilson96/nativeMDB/blob/master/assets/screenshots/home.png?raw=true)
+<img src="https://github.com/Gilson96/nativeMDB/blob/master/assets/screenshots/home.png?raw=true" width="250"/>
 
 ### 🎬 Movie Detail
-![Details](https://github.com/Gilson96/nativeMDB/blob/master/assets/screenshots/movie.png?raw=true)
+<img src="https://github.com/Gilson96/nativeMDB/blob/master/assets/screenshots/movie.png?raw=true" width="250"/>
 
 ### 🔍 Filtered Results
-![Filtered](https://github.com/Gilson96/nativeMDB/blob/master/assets/screenshots/filtered.png?raw=true)
+<img src="https://github.com/Gilson96/nativeMDB/blob/master/assets/screenshots/filtered.png?raw=true" width="250"/>
 
 ### ❤️ My List
-![My List](https://github.com/Gilson96/nativeMDB/blob/master/assets/screenshots/myList.png?raw=true)
+<img src="https://github.com/Gilson96/nativeMDB/blob/master/assets/screenshots/myList.png?raw=true" width="250"/>
 
 ---
 
