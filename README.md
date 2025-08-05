@@ -16,6 +16,14 @@ NativeMDB is a **React Native** mobile application built using **Expo**, designe
 
 ---
 
+## 🧪 Demo Login
+You can test the app with the following credentials:
+
+Email: grafael99@gmail.com
+Password: abc123456
+
+---
+
 ## 📱 Screenshots
 
 ### 🔐 Login Screen
